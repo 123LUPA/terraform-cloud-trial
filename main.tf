@@ -1,7 +1,12 @@
 
-# Configure the Azure provider
-provider "azurerm" {
-    version = "~>1.32.0"
+terraform {
+  backend "remote" {
+    organization = "123trial"
+
+    workspaces {
+      name = "terraform-cloud-trial"
+    }
+  }
 }
 
 # Create a new resource group
